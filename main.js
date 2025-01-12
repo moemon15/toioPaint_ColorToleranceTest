@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // お手本画像の描画
         imageCtx.fillStyle = `rgb(${state.modelColor.r}, ${state.modelColor.g}, ${state.modelColor.b})`;
-        imageCtx.fillRect(50, 50, 200, 100);
+        imageCtx.fillRect(60, 40, 190, 110);
 
         // ユーザー描画のシミュレーション
         drawCtx.fillStyle = `rgb(${state.userColor.r}, ${state.userColor.g}, ${state.userColor.b})`;
