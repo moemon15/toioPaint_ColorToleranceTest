@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #f5f5f5;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.rgb-control {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.rgb-sliders {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.rgb-sliders div {
+    display: flex;
+    flex-direction: column;
+}
+
+.rgb-sliders label {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.color-preview {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.preview-box {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}
+
+.tolerance-control {
+    margin-bottom: 1.5rem;
+}
+
+.canvas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+canvas {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.results {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.similarity {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.stats-grid p:first-child {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .canvas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+input[type="color"] {
+    width: 3rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}

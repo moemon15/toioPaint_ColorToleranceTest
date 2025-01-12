@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色の許容範囲テスト</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h3>色の許容範囲テスト</h3>
+            
+            <div class="controls-grid">
+                <!-- お手本画像のRGB設定 -->
+                <div class="rgb-control">
+                    <h5>お手本画像のRGB設定</h5>
+                    <div class="rgb-sliders">
+                        <div>
+                            <label>赤: <span id="modelR-value">74</span></label>
+                            <input type="range" id="modelR" min="0" max="255" value="74">
+                        </div>
+                        <div>
+                            <label>緑: <span id="modelG-value">74</span></label>
+                            <input type="range" id="modelG" min="0" max="255" value="74">
+                        </div>
+                        <div>
+                            <label>青: <span id="modelB-value">74</span></label>
+                            <input type="range" id="modelB" min="0" max="255" value="74">
+                        </div>
+                    </div>
+                    <div class="color-preview">
+                        <span>色のプレビュー:</span>
+                        <div id="model-color-preview" class="preview-box"></div>
+                        <input type="color" id="model-color-picker" value="#4A4A4A">
+                    </div>
+                </div>
+
+                <!-- ユーザー描画のRGB設定 -->
+                <div class="rgb-control">
+                    <h5>ユーザー描画のRGB設定</h5>
+                    <div class="rgb-sliders">
+                        <div>
+                            <label>赤: <span id="userR-value">80</span></label>
+                            <input type="range" id="userR" min="0" max="255" value="80">
+                        </div>
+                        <div>
+                            <label>緑: <span id="userG-value">80</span></label>
+                            <input type="range" id="userG" min="0" max="255" value="80">
+                        </div>
+                        <div>
+                            <label>青: <span id="userB-value">80</span></label>
+                            <input type="range" id="userB" min="0" max="255" value="80">
+                        </div>
+                    </div>
+                    <div class="color-preview">
+                        <span>色のプレビュー:</span>
+                        <div id="user-color-preview" class="preview-box"></div>
+                        <input type="color" id="user-color-picker" value="#505050">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 許容範囲設定 -->
+            <div class="tolerance-control">
+                <label>許容範囲: <span id="tolerance-value">100</span></label>
+                <input type="range" id="tolerance" min="0" max="255" value="100">
+            </div>
+        </div>
+
+        <!-- キャンバス表示エリア -->
+        <div class="canvas-grid">
+            <div>
+                <h4>お手本画像</h4>
+                <canvas id="imageCanvas"></canvas>
+            </div>
+            <div>
+                <h4>ユーザー描画</h4>
+                <canvas id="drawCanvas"></canvas>
+            </div>
+            <div>
+                <h4>比較結果</h4>
+                <canvas id="resultCanvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 結果表示エリア -->
+        <div class="results">
+            <h4>結果:</h4>
+            <p class="similarity">類似度スコア: <span id="similarity-score">0.00</span>%</p>
+            <div class="stats-grid">
+                <div>
+                    <p>お手本のピクセル数:</p>
+                    <p id="model-count">0</p>
+                </div>
+                <div>
+                    <p>描画されたピクセル数:</p>
+                    <p id="user-count">0</p>
+                </div>
+                <div>
+                    <p>一致したピクセル数:</p>
+                    <p id="match-count">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
